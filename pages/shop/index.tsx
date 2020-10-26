@@ -1,7 +1,9 @@
-import { json2table } from "./utils/json-to-table";
-import fixture from "./fixtures";
+import { JS2TBL } from "../utils";
+import fixture from "../fixtures";
 
-const Shop = ({ shopData = fixture.shopData }) => json2table(shopData);
+const Shop = ({ shopData = fixture.shopData }) => (
+    <JS2TBL title="Shop Info" json={shopData} />
+);
 
 // export async function getServerSideProps() {
 //     const { AWS_ENDPOINT, SHOP } = process.env;

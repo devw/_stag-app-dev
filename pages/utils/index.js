@@ -1,9 +1,9 @@
-export function json2table(json) {
+export function JS2TBL({ title, json }) {
     return (
         <table>
             <thead>
                 <tr>
-                    <th colSpan="2">ScriptTag Data</th>
+                    <th colSpan="2">{title}</th>
                 </tr>
             </thead>
             <tbody>

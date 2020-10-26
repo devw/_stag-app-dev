@@ -1,8 +1,10 @@
-import { json2table } from "./utils/json-to-table";
+import { JS2TBL } from "./utils";
 import fixture from "./fixtures";
 
-const ScriptTag = ({ data = fixture.scriptTag }) => json2table(data);
-
+const ScriptTag = ({ data = fixture.scriptTag }) => {
+    return <JS2TBL props={{ json: data, title: "script Tag" }} />
+}
+    
 export async function getServerSideProps() {
     const Shopify = require("shopify-api-node");
     const { scriptTag } = new Shopify({

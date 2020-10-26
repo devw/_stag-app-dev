@@ -1,8 +1,10 @@
 import Link from "next/link";
+import styles from "./index.module.css"
 
-export default function Home() {
+export default function Home(pageProps) {
+    console.log(pageProps);
     return (
-        <div>
+        <div className={styles.home}>
             <div>
                 <Link href="/script-tag">script-tag</Link>
             </div>
