@@ -1,15 +1,22 @@
-export function JS2TBL({ title, json }) {
+import React from 'react';
+
+type TableProps = {
+    title: string,
+    json: Array<object>
+  }
+
+export function JS2TBL({ title, json } : TableProps) {
     return (
         <table>
             <thead>
                 <tr>
-                    <th colSpan="2">{title}</th>
+                    <th colSpan={2}>{title}</th>
                 </tr>
             </thead>
             <tbody>
-                {json.map((o) =>
+                { json?.map((o) =>
                     Reflect.ownKeys(o).map((e) => (
-                        <tr key={e}>
+                        <tr>
                             <td>{e}</td>
                             <td>{o[e].toString()}</td>
                         </tr>
