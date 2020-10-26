@@ -1,9 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Nav from "./nav";
 
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx);
-        console.log("_document.js", ctx);
         return { ...initialProps };
     }
 
@@ -12,6 +12,7 @@ class MyDocument extends Document {
             <Html lang="it">
                 <Head />
                 <body>
+                    <Nav />
                     <Main />
                     <NextScript />
                 </body>
