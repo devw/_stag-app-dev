@@ -1,7 +1,11 @@
-export default function Home(pageProps) {
-    console.log(pageProps);
+import React from "react";
+import { Nav } from "./nav";
+
+const Home: React.FC = (pageProps) => {
+    console.log("pageProps...", pageProps);
     return (
-        <div>
-        </div>
+        <div><Nav /></div>
     );
 }
+
+export default Home;
