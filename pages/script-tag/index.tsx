@@ -13,7 +13,8 @@ export default class ScriptTag extends React.Component {
 
     render = () => {
         return <div>
-            <div><input type="button" value="list" onClick={this.api} /> <input type="button" value="create" onClick={this.api} /></div>
+            <input type="button" value="list" onClick={this.api} />
+            <input type="button" value="create" onClick={this.api} />
             <JS2TBL json={this.state?.data} title="Script Tag" />
         </div>
     }
