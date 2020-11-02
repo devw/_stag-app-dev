@@ -5,14 +5,14 @@ import styles from "./nav.module.css"
 export const Nav: React.FC = () => {
     return (
         <div className={styles.nav}>
-            <div>
+            {/* <div>
                 <Link href="/script-tag">Script-tag</Link>
-            </div>
+            </div> */}
             <div>
                 <Link href="/shop">shop</Link>
             </div>
             <div>
-                <Link href="/upload">Upload a theme</Link>
+                <Link href="/themes">Themes</Link>
             </div>
         </div>
     );

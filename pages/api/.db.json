@@ -1,0 +1,12 @@
+{
+    "shops": [
+      { "SK": "paso2020.myshopify.com", "accessToken": "******", "theme-name": "theme-pol" },
+      { "SK": "stag-store-2020.myshopify.com", "accessToken": "******", "theme-name": "theme-pol" },
+      { "SK": "stag-store-2021.myshopify.com", "accessToken": "******", "theme-name": "theme-pol" }
+
+    ],
+    "themes": [
+      { "SK": "theme-pol", "src": "https://devw.github.io/script-tag/bundle.js"  },
+      { "SK": "theme-antonio", "src": "https://devw.github.io/script-tag/bundle.js"}
+    ]
+  }

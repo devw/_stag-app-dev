@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 import { Option } from "./option-theme";
 import { onSubmit } from "./onSubmit-theme";
 
@@ -14,7 +15,9 @@ const Themes: React.FC<IProps> = ({ data }): JSX.Element => {
             <select>
                 {listItems}
             </select>
-            <button type="submit">Upload theme</button>
+            <button type="button" onClick={changeCurrentTheme}>Change the current theme</button>
+            Or
+            <Link href="/upload">Upload a new theme</Link>
         </form>
     );
 }
@@ -26,27 +29,13 @@ export interface Theme {
 
 export async function getServerSideProps() {
     const { AWS_ENDPOINT, SHOP } = process.env;
-    const res = await fetch(`${AWS_ENDPOINT}/dev/shop/${SHOP}`);
+    const res = await fetch(`${AWS_ENDPOINT}/themes`);
     const data: Theme[] | undefined = await res.json();
-    return {
-        props: {
-            data: [
-                {
-                    SK: "theme-1",
-                    src: "http://adsdsads.js"
-                },
-                {
-                    SK: "theme-2",
-                    src: "http://adsdsads.js"
-                },
-                {
-                    SK: "theme-3",
-                    src: "http://adsdsads.js"
-                }
-            ]
-        }
-    }
     return { props: { data } };
+
+}
+
+const changeCurrentTheme = () => {
 
 }
 
