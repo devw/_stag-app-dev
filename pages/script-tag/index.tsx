@@ -1,17 +1,20 @@
-import React from "react";
+import React, { MouseEvent } from 'react';
 import { JS2TBL } from "../utils";
 
-export default class ScriptTag extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+interface IState {
+    data: object[];
+}
 
-    api = async (e) => {
-        const result = await fetch(`/api/script-tag/?query=${e.target.value}`);
+interface IProps { }
+
+export default class ScriptTag extends React.Component<IProps, IState>{
+    api = async (e: MouseEvent): Promise<void> => {
+        const target = e.target as HTMLTextAreaElement;
+        const result = await fetch(`/api/script-tag/?query=${target.value}`);
         this.setState(await result.json());
     }
 
-    render = () => {
+    render = (): JSX.Element => {
         return <div>
             <input type="button" value="list" onClick={this.api} />
             <input type="button" value="create" onClick={this.api} />
