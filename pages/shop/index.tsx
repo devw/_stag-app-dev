@@ -1,16 +1,17 @@
 import { JS2TBL } from "../utils";
-import fixture from "../fixtures";
 
-const Shop = ({ shopData = fixture.shopData }) => (
-    <JS2TBL title="Shop Info" json={shopData} />
-);
+type Props = { data: object[] };
 
-// export async function getServerSideProps() {
-//     const { AWS_ENDPOINT, SHOP } = process.env;
-//     const res = await fetch(`${AWS_ENDPOINT}/dev/get-shop/${SHOP}`);
-//     const data = await res.json();
-//     console.log(data);
-//     return { props: data };
-// }
+const Shop: React.FC<Props> = ({ data }) => {
+    return <JS2TBL title="Shop Info" json={data} />
+}
+
+export async function getServerSideProps() {
+    const { AWS_ENDPOINT, SHOP } = process.env;
+    const res = await fetch(`${AWS_ENDPOINT}/dev/shop/${SHOP}`);
+    const data = await res.json();
+    return { props: { data } };
+
+}
 
 export default Shop;

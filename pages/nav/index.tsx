@@ -1,7 +1,8 @@
+import React from "react";
 import Link from "next/link";
 import styles from "./nav.module.css"
 
-export default function Nav(pageProps) {
+export const Nav: React.FC = () => {
     return (
         <div className={styles.nav}>
             <div>

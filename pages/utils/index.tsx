@@ -3,9 +3,9 @@ import React from 'react';
 type TableProps = {
     title: string,
     json: Array<object>
-  }
+}
 
-export function JS2TBL({ title, json } : TableProps) {
+export function JS2TBL({ title, json }: TableProps) {
     return (
         <table>
             <thead>
@@ -14,9 +14,9 @@ export function JS2TBL({ title, json } : TableProps) {
                 </tr>
             </thead>
             <tbody>
-                { json?.map((o) =>
-                    Reflect.ownKeys(o).map((e) => (
-                        <tr>
+                {json?.map((o, i) =>
+                    Reflect.ownKeys(o).map((e, k) => (
+                        <tr key={i + k}>
                             <td>{e}</td>
                             <td>{o[e].toString()}</td>
                         </tr>
